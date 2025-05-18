@@ -38,12 +38,14 @@ div {
         flex-direction: column;
         /* Stack items on mobile */
     }
+
     .nav-links {
         gap: 0.8rem;
         flex-wrap: wrap;
         /* Allow links to wrap if needed */
         justify-content: center;
     }
+
     .top-nav {
         padding: 0.8rem 0;
     }
