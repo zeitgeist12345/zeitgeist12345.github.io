@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const heading = document.querySelector('h1');
-    heading.addEventListener('click', function() {
+    heading.addEventListener('click', function () {
         alert('Hello from JavaScript!');
     });
 });
