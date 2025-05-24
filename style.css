@@ -8,8 +8,7 @@ body {
 
 .content-container {
     display: flex;
-    width: 100%;
-    max-width: 60rem;
+    width: 80%;
     margin: 0 auto;
     /* Center on desktop */
     box-sizing: border-box;
@@ -17,8 +16,7 @@ body {
 
 .content-container-vertical {
     display: flex;
-    width: 100%;
-    max-width: 60rem;
+    width: 80%;
     margin: 0 auto;
     flex-direction: column;
     align-items: center;
@@ -49,50 +47,48 @@ div {
     /* Prevent line break */
 }
 
-/* Sketches Grid Styles */
+
 .sketches-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    width: 100%;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
 }
 
 .sketch-item {
-    background: #333;
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 8px;
+    height: 50vh; /* Fixed height */
+    width: auto; /* Width adjusts automatically */
+    object-fit: contain; /* Prevent cropping */
+    transition: transform 0.2s ease;
+    flex-shrink: 0; /* Prevent shrinking */
 }
 
-@media (max-width: 768px) {
+.sketch-item:hover {
+    transform: scale(1.02);
+    z-index: 1;
+}
 
-    .sketches-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
+
+@media (max-width: 100rem) {
 
     .sketch-item {
-        margin: 0 auto;
+        height: auto;
     }
 
     .content-container {
+        width: 100%;
         flex-direction: column;
-        /* Stack items on mobile */
     }
 
-    .content-container-vertical iframe {
+    .content-container-vertical {
         width: 100%;
-        /* Full width on mobile */
-        aspect-ratio: 16/9;
-        /* Adjust the ratio as needed */
+        flex-direction: column;
     }
+
 
     .nav-links {
         gap: 0.8rem;
         flex-wrap: wrap;
-        /* Allow links to wrap if needed */
         justify-content: center;
     }
 
@@ -101,6 +97,7 @@ div {
     }
 }
 
+/* Rest of existing styles remain unchanged */
 .top-nav {
     padding: 0.8rem 0;
     position: fixed;
@@ -110,9 +107,8 @@ div {
     z-index: 1000;
     display: flex;
     justify-content: center;
-    /* Changed from space-between */
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .nav-links {
