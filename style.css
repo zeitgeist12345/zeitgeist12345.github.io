@@ -9,7 +9,7 @@ body {
 .content-container {
     display: flex;
     width: 100%;
-    max-width: 50rem;
+    max-width: 60rem;
     margin: 0 auto;
     /* Center on desktop */
     box-sizing: border-box;
@@ -17,9 +17,11 @@ body {
 
 .content-container-vertical {
     display: flex;
+    width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     box-sizing: border-box;
 }
 
@@ -47,7 +49,34 @@ div {
     /* Prevent line break */
 }
 
+/* Sketches Grid Styles */
+.sketches-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.sketch-item {
+    background: #333;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+}
+
 @media (max-width: 768px) {
+
+    .sketches-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .sketch-item {
+        margin: 0 auto;
+    }
+
     .content-container {
         flex-direction: column;
         /* Stack items on mobile */
