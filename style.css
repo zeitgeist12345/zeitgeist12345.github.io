@@ -59,15 +59,8 @@ div {
     height: 50vh; /* Fixed height */
     width: auto; /* Width adjusts automatically */
     object-fit: contain; /* Prevent cropping */
-    transition: transform 0.2s ease;
     flex-shrink: 0; /* Prevent shrinking */
 }
-
-.sketch-item:hover {
-    transform: scale(1.02);
-    z-index: 1;
-}
-
 
 @media (max-width: 100rem) {
 
