@@ -56,10 +56,14 @@ div {
 }
 
 .sketch-item {
-    height: 50vh; /* Fixed height */
-    width: auto; /* Width adjusts automatically */
-    object-fit: contain; /* Prevent cropping */
-    flex-shrink: 0; /* Prevent shrinking */
+    height: 50vh;
+    /* Fixed height */
+    width: auto;
+    /* Width adjusts automatically */
+    object-fit: contain;
+    /* Prevent cropping */
+    flex-shrink: 0;
+    /* Prevent shrinking */
 }
 
 @media (max-width: 37.5rem) {
