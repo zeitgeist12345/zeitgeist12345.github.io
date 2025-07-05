@@ -62,7 +62,7 @@ div {
     flex-shrink: 0; /* Prevent shrinking */
 }
 
-@media (max-width: 100rem) {
+@media (max-width: 37.5rem) {
 
     .sketch-item {
         height: auto;
