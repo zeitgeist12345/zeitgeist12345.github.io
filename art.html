@@ -156,6 +156,8 @@
     <div class="content-container">
         <div class="sketches-grid">
             <video class="sketch-item" src="media/art/DiodeFinal3.mp4" type="video/mp4" controls></video>
+            <img class="sketch-item gif-on-click" src="media/art/UsingNonHomogeneityToBreakSecondLaw.png"
+                data-gif="media/art/secondLawThermodynamics.gif" alt="GIF preview">
             <img class="sketch-item" src="media/art/4k Innovex LOGO.jpg">
             <img class="sketch-item" src="media/art/borderless vlc.png">
             <img class="sketch-item" src="media/art/20240525_172921.jpg">
@@ -165,5 +167,39 @@
     </div>
 
 </body>
+<script>
+    /*
+      Behavior:
+      - First click: swap static -> animated GIF and restart it
+      - Second click: swap back to the static thumbnail
+      - Works even if src becomes absolute URL
+    */
+
+    document.querySelectorAll('.gif-on-click').forEach(img => {
+        const previewSrc = img.getAttribute('src');         // original thumbnail
+        const gifSrcBase = img.dataset.gif;                 // base gif path (no cache param)
+        let playing = false;
+
+        img.style.cursor = 'pointer';
+
+        img.addEventListener('click', () => {
+            if (!playing) {
+                // Force reload of GIF to restart it (append timestamp)
+                const gifSrc = gifSrcBase + (gifSrcBase.includes('?') ? '&' : '?') + 't=' + Date.now();
+                img.src = gifSrc;
+                img.setAttribute('data-playing', 'true');
+                playing = true;
+            } else {
+                // swap back to preview
+                img.src = previewSrc;
+                img.removeAttribute('data-playing');
+                playing = false;
+            }
+        });
+
+        // Optional: if you want clicking anywhere else to stop playing, you can add handlers
+    });
+</script>
+
 
 </html>
